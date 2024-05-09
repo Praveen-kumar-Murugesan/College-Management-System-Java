@@ -1,0 +1,135 @@
+create table Login (username varchar(20), password_ varchar(15), reference_id varchar(20), type_of_user varchar(15) );
+insert into Login values('Guru','Guru@123','STD101','Student');
+insert into Login values('Kishore','Kishore12#','STD102','Student');
+insert into Login values('Jayandhar','JD@07','STD103','Student');
+insert into Login values('Manish','Manish@012','STD104','Student');
+insert into Login values('Pradeep','Pradeep$12','STD105','Student');
+insert into Login values('Sathya','Sathya@02','FD2001','Faculty');
+insert into Login values('Radhika','Radhika123#','FD2002','Faculty');
+insert into Login values('Ragavachari','Raga$06','FD2003','Faculty');
+insert into Login values('Selvi','Selvi@12','FD2004','Faculty');
+insert into Login values('Bindhu','Bindhu#08','FD2005','Faculty');
+insert into Login values('Venkataraman','Venkat@56','AD301','Admin');
+insert into Login values('Mahadevan','Dev@108','AD302','Admin');
+insert into Login values('Chandrasekhar','Sekhar$32','AD303','Admin');
+insert into Login values('Jayaraman','Jay@086','AD304','Admin');
+insert into Login values('Sundaram','Ram$507','AD305','Admin');
+SELECT*FROM Login
+
+create table Student (name_ varchar(20), roll_no varchar(15), section varchar(5), std_campus varchar(15));
+insert into Student values('Guru','STD101','ECE-A','Coimbatore');
+insert into Student values('Kishore','STD102','CSE-C','Coimbatore');
+insert into Student values('Jayandhar','STD103','MEE-D','Coimbatore');
+insert into Student values('Manish','STD104','ECE-C','Coimbatore');
+insert into Student values('Pradeep','STD105','CSE-A','Coimbatore');
+
+create table UG_Student (roll_no varchar(15), no_of_cert_courses numeric(3,0));
+insert into UG_Student values('STD102','12');
+insert into UG_Student values('STD103','6');
+insert into UG_Student values('STD105','18');
+
+create table PG_Student (roll_no varchar(15), no_of_research_papers numeric(3,0));
+insert into PG_Student values('STD101','2');
+insert into PG_Student values('STD104','3');
+
+select*from Student;
+select*from UG_Student;
+select*from PG_Student;
+
+create table Course_Registration (roll_no varchar(15), course_id varchar(7), course_name varchar(30));
+insert into Course_Registration values('STD101','ECE-204','Digital Electronics');
+insert into Course_Registration values('STD101','CSE-204','Object Oriented Programming');
+insert into Course_Registration values('STD101','MEE-181','Manufacturing Practices');
+insert into Course_Registration values('STD102','ECE-204','Digital Electronics');
+insert into Course_Registration values('STD102','CSE-204','Object Oriented Programming');
+insert into Course_Registration values('STD102','MEE-181','Manufacturing Practices');
+insert into Course_Registration values('STD103','ECE-204','Digital Electronics');
+insert into Course_Registration values('STD103','CSE-204','Object Oriented Programming');
+insert into Course_Registration values('STD103','MEE-181','Manufacturing Practices');
+insert into Course_Registration values('STD104','ECE-204','Digital Electronics');
+insert into Course_Registration values('STD104','CSE-204','Object Oriented Programming');
+insert into Course_Registration values('STD104','MEE-181','Manufacturing Practices');
+insert into Course_Registration values('STD105','ECE-204','Digital Electronics');
+insert into Course_Registration values('STD105','CSE-204','Object Oriented Programming');
+insert into Course_Registration values('STD105','MEE-181','Manufacturing Practices');
+select*from Course_Registration
+
+
+create table Address (reference_id varchar(10), street varchar(20), city varchar(20), pincode numeric(6,0) );
+insert into Address values('STD101','Blackers Road','Madurai','632406');
+insert into Address values('STD102','Whites Road ','Coimbatore','632515');
+insert into Address values('STD103','Mount Road','Chennai','632408');
+insert into Address values('STD104','Ritchie Street','Kumbakonam ','632507');
+insert into Address values('STD105','McLean Street','Kanchipuram','632415');
+insert into Address values('FD2001','Eldams Road','Coimbatore','632515');
+insert into Address values('FD2002','Flower Street','Thanjavur','632504');
+insert into Address values('FD2003','Parrys Corner','Chennai','632408');
+insert into Address values('FD2004','D’Monte Colony','Coimbatore','632515');
+insert into Address values('FD2005','Harris Road','Tiruvannamalai ','632505');
+select*from Address
+
+create table Library_ (user_ref_id varchar(10), user_name varchar(20), premium_user varchar(5), book_id varchar(50), borrow_date date, return_date date );
+insert into Library_ values('STD101','Guru','no','BID-1006','2 DEC,2020','12 DEC,2020');
+insert into Library_ values('STD101','Guru','no','BID-1007','16 DEC,2020','');
+insert into Library_ values('STD102','Kishore','yes','BID-1256,BID-1257','12 DEC,2028','');
+insert into Library_ values('STD104','Manish','no','BID-906','2 DEC,2028','18 DEC,2028');
+insert into Library_ values('STD105','Pradeep','yes','BID-682','2 DEC,2028','22 DEC,2028');
+insert into Library_ values('STD105','Pradeep','yes','BID-683,BID-684,BID-685','22 DEC,2028','');
+insert into Library_ values('FD2001','Sathya','yes','BID-324','6 DEC,2028','16 DEC,2028');
+insert into Library_ values('FD2002','Radhika','no','BID-604','2 DEC,2028','');
+insert into Library_ values('FD2003','Ragavachari','no','BID-2004','8 DEC,2028','17 DEC,2028');
+insert into Library_ values('FD2005','Bindhu','yes','BID-1002','28 NOV,2028','12 DEC,2028');
+insert into Library_ values('FD2005','Bindhu','yes','BID-1006','13 DEC,2028','');
+select*from Library_
+
+create table Sports_House (house_id varchar(20), house_name varchar(15),house_points numeric(10,3), max_points numeric(10,3) ); 
+insert into Sports_House values('HD01','Amritamayi','68','100'); 
+insert into Sports_House values('HD02','Anandamayi','56','100'); 
+insert into Sports_House values('HD03','Chinmayi','32','100'); 
+select*from Sports_House
+
+create table Staff (staff_id varchar(20), staff_name varchar(15), staff_dept varchar(20),staff_pay numeric(10,3), staff_incentive numeric(10,3) ); 
+insert into Staff values('FD2001','Sathya','CSE-204','35000','5000'); 
+insert into Staff values('FD2002','Radhika','ECE-204','32000','5000'); 
+insert into Staff values('FD2003','Ragavachari','MEE-181','28000','5000'); 
+insert into Staff values('FD2004','Selvi','CSE-204','36000','5000'); 
+insert into Staff values('FD2005','Bindhu','ECE-204','32000','5000'); 
+select*from Staff
+
+create table Teaching_Staff (staff_id varchar(20), subscription_allotment numeric(5,0)); 
+insert into Teaching_Staff values('FD2001','5000'); 
+insert into Teaching_Staff values('FD2002','4500'); 
+insert into Teaching_Staff values('FD2003','3000'); 
+select*from Teaching_Staff
+
+create table Support_Staff (staff_id varchar(20), overtime_pay numeric(10,3) ); 
+insert into Support_Staff values('FD2004','2000'); 
+insert into Support_Staff values('FD2005','1500'); 
+select*from Support_Staff
+
+create table Admin_ (admin_id varchar(20), admin_name varchar(20) ); 
+insert into Admin_ values('AD301','Venkataraman'); 
+insert into Admin_ values('AD302','Mahadevan'); 
+insert into Admin_ values('AD303','Chandrasekhar'); 
+insert into Admin_ values('AD304','Jayaraman'); 
+insert into Admin_ values('AD305','Sundaram'); 
+select*from Admin_
+
+create table Hosteller ( roll_no varchar(15), block_no varchar(15),room_no varchar(15), hostel_fees numeric(10,2)); 
+insert into Hosteller values('STD101','B-1','R-101','110000'); 
+insert into Hosteller values('STD102','B-2','R-201','110000'); 
+insert into Hosteller values('STD103','B-1','R-102','110000'); 
+insert into Hosteller values('STD104','B-2','R-202','110000'); 
+insert into Hosteller values('STD105','B-2','R-203','110000');
+select*from Hosteller
+
+create table Boy_Hosteller ( roll_no varchar(15), boys_hostel_rules varchar(1000)); 
+insert into Boy_Hosteller values('STD101','No Phones'); 
+insert into Boy_Hosteller values('STD102','No High Electrical Gadgets'); 
+insert into Boy_Hosteller values('STD105','No Ragging'); 
+select*from Boy_Hosteller
+
+create table Girl_Hosteller ( roll_no varchar(15), girls_hostel_rules varchar(1000)); 
+insert into Girl_Hosteller values('STD103','No Phones'); 
+insert into Girl_Hosteller values('STD104','Entry close at 10PM'); 
+select*from Girl_Hosteller
